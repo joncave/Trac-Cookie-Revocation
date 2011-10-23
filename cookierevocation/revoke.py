@@ -29,10 +29,7 @@ class CookieRevocation(Component):
         if req.method == 'POST':
             user = req.args.get('user')
             if user:
-                @self.env.with_transaction()
-                def revoke_auth_cookie(db):
-                    cursor = db.cursor()
-                    cursor.execute("DELETE FROM auth_cookie WHERE name = %s", (user,))
+                self.env.db_transaction("DELETE FROM auth_cookie WHERE name = %s", (user,))
                 self.log.info('Cookie revoked for user %s', user)
                 add_notice(req, 'Cookie revoked!')
             else:

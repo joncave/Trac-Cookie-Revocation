@@ -10,4 +10,4 @@ Trac plugin to enable revocation of a user's trac_auth cookie.
     [components] section.
 
 == Requirements ==
- * Trac >= 0.12
+ * Trac >= 0.13
