@@ -1,0 +1,13 @@
+= CookieRevocation =
+
+Trac plugin to enable revocation of a user's trac_auth cookie.
+
+== Installation ==
+ 1. Run: python setup.py bdist_egg
+ 2. Copy the newly created .egg file into the "plugins" directory
+    of your Trac environment.
+ 3. Add "cookierevocation.* = enabled" to your trac.ini under the
+    [components] section.
+
+== Requirements ==
+ * Trac >= 0.12
